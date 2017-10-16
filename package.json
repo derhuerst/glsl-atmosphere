@@ -4,7 +4,7 @@
   "description": "Renders sky colors with Rayleigh and Mie scattering.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "browserify -t glslify test/index.js | smokestack",
     "start": "budo --live example/index.js -- -t glslify",
     "build": "browserify -t glslify example/index.js > example/bundle.js"
   },
@@ -19,11 +19,15 @@
   "author": "Rye Terrell <wwwtyro@gmail.com> (http://wwwtyro.github.io)",
   "license": "Unlicense",
   "devDependencies": {
+    "array-almost-equal": "^1.0.0",
     "browserify": "^13.0.0",
     "budo": "^7.1.0",
     "gl-geometry": "^2.0.0",
     "gl-shader": "^4.1.1",
-    "glslify": "^5.0.1"
+    "gl-shader-output": "^2.0.1",
+    "glslify": "^5.0.1",
+    "smokestack": "^3.4.1",
+    "tape": "^4.8.0"
   },
   "directories": {
     "example": "example"
